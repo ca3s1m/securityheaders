@@ -217,6 +217,7 @@ if __name__ == "__main__":
 
     okColor = '\033[92m'
     warnColor = '\033[93m'
+    failColor = '\33[31m'
     endColor = '\033[0m'
     for header, value in headers.items():
         if value['warn'] == 1:
@@ -236,15 +237,15 @@ if __name__ == "__main__":
     if https['supported']:
         print('HTTPS supported ... [ ' + okColor + 'OK' + endColor + ' ]')
     else:
-        print('HTTPS supported ... [ ' + warnColor + 'FAIL' + endColor + ' ]')
+        print('HTTPS supported ... [ ' + failColor + 'FAIL' + endColor + ' ]')
 
     if https['certvalid']:
         print('HTTPS valid certificate ... [ ' + okColor + 'OK' + endColor + ' ]')
     else:
-        print('HTTPS valid certificate ... [ ' + warnColor + 'FAIL' + endColor + ' ]')
+        print('HTTPS valid certificate ... [ ' + failColor + 'FAIL' + endColor + ' ]')
 
 
     if foo.test_http_to_https(url, 5):
         print('HTTP -> HTTPS redirect ... [ ' + okColor + 'OK' + endColor + ' ]')
     else:
-        print('HTTP -> HTTPS redirect ... [ ' + warnColor + 'FAIL' + endColor + ' ]')
+        print('HTTP -> HTTPS redirect ... [ ' + failColor + 'FAIL' + endColor + ' ]')
